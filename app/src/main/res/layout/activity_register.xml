@@ -14,7 +14,7 @@
         app:layout_constraintGuide_percent="0.10" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/ln_dataLogIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -72,7 +72,7 @@
         android:text="Registrar"
         app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ln_dataLogIn"
         app:layout_constraintVertical_bias="0.661" />
 
     <Button
@@ -83,14 +83,14 @@
         app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_register"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ln_dataLogIn"
         app:layout_constraintVertical_bias="0.661" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="121dp"
         android:layout_height="104dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/ln_dataLogIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl_top"
