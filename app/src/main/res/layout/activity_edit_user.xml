@@ -4,14 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".EditUser">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="118dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_data_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gl_top"
+        app:srcCompat="@drawable/photo_user" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10" />
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+
+    <Button
+        android:id="@+id/btn_changeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambiar Imagen"
+        android:autoLink="phone"
+        android:backgroundTint="#00FFFFFF"
+        android:padding="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_data_center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/gl_top" />
 
     <LinearLayout
         android:id="@+id/ln_dataLogIn"
@@ -21,7 +52,7 @@
         app:layout_constraintBottom_toTopOf="@id/gl_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gl_top">
+        app:layout_constraintTop_toBottomOf="@id/gl_data_center">
 
 
         <EditText
@@ -29,8 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombres"
-            android:inputType="textPersonName"
-            android:text="Diego" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/et_lastName"
@@ -44,8 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Usuario"
-            android:inputType="textPersonName"
-            android:text="d" />
+            android:inputType="textPersonName" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -57,52 +86,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:text="1" />
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_bottom"
+        android:id="@+id/gl_data_center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.35" />
 
-    <Button
-        android:id="@+id/btn_register"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:text="Registrar"
-        android:background="@drawable/btn_two"
-        android:textColor="@drawable/txt_btn_two"
-        app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ln_dataLogIn"
-        app:layout_constraintVertical_bias="0.661" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
 
     <Button
-        android:id="@+id/btn_cancelRegister"
+        android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
         android:background="@drawable/btn_two"
+        android:gravity=""
+        android:text="Actualizar"
         android:textColor="@drawable/txt_btn_two"
-        app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/gl_buttons"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_register"
-        app:layout_constraintTop_toBottomOf="@+id/ln_dataLogIn"
-        app:layout_constraintVertical_bias="0.661" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="121dp"
-        android:layout_height="104dp"
-        app:layout_constraintBottom_toTopOf="@+id/ln_dataLogIn"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gl_top"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="@+id/gl_bottom"
+        app:layout_constraintVertical_bias="0.518" />
 </androidx.constraintlayout.widget.ConstraintLayout>

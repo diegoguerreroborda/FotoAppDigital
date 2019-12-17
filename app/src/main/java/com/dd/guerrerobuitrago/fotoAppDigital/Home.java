@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.dd.guerrerobuitrago.fotoAppDigital.fragments.PromotionFragments;
 import com.dd.guerrerobuitrago.fotoAppDigital.fragments.ServicesFragment;
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
 
+    private String firstName;
     private BottomNavigationView buttonNav;
     private FrameLayout frameLayout;
 
@@ -26,6 +28,13 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Bundle bundleFN = getIntent().getExtras();
+        if(bundleFN != null){
+            if(bundleFN.getString("firstName") != null){
+                firstName = bundleFN.getString("firstName");
+                Toast.makeText(getBaseContext(), "Bienvenido " + firstName, Toast.LENGTH_LONG).show();
+            }
+        }
         init();
     }
 

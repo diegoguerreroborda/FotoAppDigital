@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,8 +61,10 @@ public class Register extends AppCompatActivity {
         });
     }
 
+    //No acepta dos usuarios con el mismo nombre
     public void getRegister(View view){
-        if(firstName.getText().equals("") || lastName.getText().equals("") || userName.getText().equals("") || password.getText().equals("")){
+        Log.d("jj", lastName.getText().toString());
+        if(firstName.getText().equals("") || lastName.getText() == null || userName.getText().equals("") || password.getText().equals("")){
             Toast.makeText(getBaseContext(), "Faltan algunos datos", Toast.LENGTH_LONG).show();
         }else{
             if(personList.size() == 0){

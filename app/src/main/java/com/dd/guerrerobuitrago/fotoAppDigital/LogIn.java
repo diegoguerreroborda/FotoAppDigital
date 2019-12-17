@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,7 +69,7 @@ public class LogIn extends AppCompatActivity {
             for (int i = 0; i < personList.size(); i++){
                 if(personList.get(i).getUserName().equals(etUsername.getText().toString())){
                     if(personList.get(i).getPassword().equals(etPassword.getText().toString())){
-                        enterIntoActivity();
+                        enterIntoActivity(personList.get(i));
                         return;
                     }
                     Toast.makeText(getBaseContext(), "Contraseña Incorrecta", Toast.LENGTH_LONG).show();
@@ -81,10 +80,11 @@ public class LogIn extends AppCompatActivity {
         }
     }
 
-    public void enterIntoActivity(){
+    public void enterIntoActivity(Person person){
         Manager.setPersonList(personList);
-        Intent main2Intent = new Intent(getBaseContext(), Home.class);
-        startActivity(main2Intent);
+        Intent homeIntent = new Intent(getBaseContext(), Home.class);
+        homeIntent.putExtra("firstName", person.getFirstName());
+        startActivity(homeIntent);
     }
 
     public void getCancel(View view){

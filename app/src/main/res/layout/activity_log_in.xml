@@ -61,7 +61,7 @@
         android:layout_height="67dp"
         android:background="@drawable/btn_two"
         android:textColor="@drawable/txt_btn_two"
-        android:padding="20dp"
+        android:padding="17dp"
         android:text="Ingresar"
         app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
         app:layout_constraintEnd_toStartOf="@+id/btn_cancelRegister"
@@ -76,6 +76,7 @@
         android:layout_height="67dp"
         android:layout_marginEnd="48dp"
         android:text="Cancelar"
+        android:padding="17dp"
         android:textColor="@drawable/txt_btn_two"
         android:background="@drawable/btn_two"
         app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
@@ -92,8 +93,8 @@
 
     <ImageView
         android:id="@+id/btn_addUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="57dp"
+        android:layout_height="85dp"
         android:scrollbarSize="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl_bottom"
         app:layout_constraintVertical_bias="0.512"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@drawable/add_user" />
 
     <ImageView
         android:id="@+id/imageView2"
