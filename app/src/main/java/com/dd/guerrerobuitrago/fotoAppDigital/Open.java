@@ -34,7 +34,7 @@ public class Open extends AppCompatActivity {
     }
 
     public void getLogIn(View view){
-        Intent logInIntent = new Intent(getBaseContext(), LogIn.class);
+        Intent logInIntent = new Intent(this, LogIn.class);
         Toast.makeText(getBaseContext(), "Abierto", Toast.LENGTH_LONG).show();
         startActivity(logInIntent);
     }

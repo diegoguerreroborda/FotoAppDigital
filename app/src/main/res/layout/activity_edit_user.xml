@@ -7,13 +7,14 @@
     tools:context=".EditUser">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/image_user_change"
         android:layout_width="118dp"
         android:layout_height="135dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         app:layout_constraintBottom_toTopOf="@+id/gl_data_center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl_top"
+        app:layout_constraintVertical_bias="0.636"
         app:srcCompat="@drawable/photo_user" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -31,18 +32,19 @@
         app:layout_constraintGuide_percent="0.73" />
 
     <Button
-        android:id="@+id/btn_changeImage"
+        android:id="@+id/btn_change_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cambiar Imagen"
         android:autoLink="phone"
         android:backgroundTint="#00FFFFFF"
         android:padding="25dp"
+        android:text="Cambiar Imagen"
         app:layout_constraintBottom_toTopOf="@+id/gl_data_center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/gl_top" />
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toEndOf="@+id/image_user_change"
+        app:layout_constraintTop_toTopOf="@+id/gl_top"
+        app:layout_constraintVertical_bias="0.493" />
 
     <LinearLayout
         android:id="@+id/ln_dataLogIn"
@@ -56,25 +58,19 @@
 
 
         <EditText
-            android:id="@+id/et_firstName"
+            android:id="@+id/et_firstName_change"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombres"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/et_lastName"
+            android:id="@+id/et_lastName_change"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Apellidos"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/et_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Usuario"
-            android:inputType="textPersonName" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -82,7 +78,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_password"
+                android:id="@+id/et_password_change"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
@@ -110,7 +106,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_two"
-        android:gravity=""
+        android:gravity="center"
+        android:padding="25dp"
         android:text="Actualizar"
         android:textColor="@drawable/txt_btn_two"
         app:layout_constraintBottom_toTopOf="@+id/gl_buttons"

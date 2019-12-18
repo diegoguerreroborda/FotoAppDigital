@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.dd.guerrerobuitrago.fotoAppDigital.models.Manager;
 import com.dd.guerrerobuitrago.fotoAppDigital.models.Person;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -39,10 +38,10 @@ public class Register extends AppCompatActivity {
 
     private void init() {
         personList = Manager.getPersonList();
-        firstName = findViewById(R.id.et_firstName);
-        lastName = findViewById(R.id.et_lastName);
-        userName = findViewById(R.id.et_username);
-        password = findViewById(R.id.et_password);
+        firstName = findViewById(R.id.et_firstName_register);
+        lastName = findViewById(R.id.et_lastName_register);
+        userName = findViewById(R.id.et_username_register);
+        password = findViewById(R.id.et_password_register);
 
         Button btnRegister = findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener(){
@@ -61,7 +60,7 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    //No acepta dos usuarios con el mismo nombre
+    //No acepta dos usuarios
     public void getRegister(View view){
         Log.d("jj", lastName.getText().toString());
         if(firstName.getText().equals("") || lastName.getText() == null || userName.getText().equals("") || password.getText().equals("")){

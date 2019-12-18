@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.dd.guerrerobuitrago.fotoAppDigital.models.Manager;
 import com.dd.guerrerobuitrago.fotoAppDigital.models.Person;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class LogIn extends AppCompatActivity {
@@ -36,8 +38,8 @@ public class LogIn extends AppCompatActivity {
 
     public void init(){
         personList = Manager.getPersonList();
-        etUsername = findViewById(R.id.et_username);
-        etPassword = findViewById(R.id.et_password);
+        etUsername = findViewById(R.id.et_username_logIn);
+        etPassword = findViewById(R.id.et_password_logIn);
 
         btnIntro = findViewById(R.id.btn_intro);
         btnIntro.setOnClickListener(new View.OnClickListener(){
@@ -82,9 +84,10 @@ public class LogIn extends AppCompatActivity {
 
     public void enterIntoActivity(Person person){
         Manager.setPersonList(personList);
-        Intent homeIntent = new Intent(getBaseContext(), Home.class);
-        homeIntent.putExtra("firstName", person.getFirstName());
+        Intent homeIntent = new Intent(this, Home.class);
+        homeIntent.putExtra("user", person);
         startActivity(homeIntent);
+        finish();
     }
 
     public void getCancel(View view){

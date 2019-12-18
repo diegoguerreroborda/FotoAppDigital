@@ -16,11 +16,14 @@ import com.dd.guerrerobuitrago.fotoAppDigital.fragments.PromotionFragments;
 import com.dd.guerrerobuitrago.fotoAppDigital.fragments.ServicesFragment;
 import com.dd.guerrerobuitrago.fotoAppDigital.fragments.SettingsFragment;
 import com.dd.guerrerobuitrago.fotoAppDigital.fragments.StoreFragment;
+import com.dd.guerrerobuitrago.fotoAppDigital.models.Person;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
 
     private String firstName;
+    private String lastName;
+    private String password;
     private BottomNavigationView buttonNav;
     private FrameLayout frameLayout;
 
@@ -28,13 +31,11 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Bundle bundleFN = getIntent().getExtras();
-        if(bundleFN != null){
-            if(bundleFN.getString("firstName") != null){
-                firstName = bundleFN.getString("firstName");
-                Toast.makeText(getBaseContext(), "Bienvenido " + firstName, Toast.LENGTH_LONG).show();
-            }
-        }
+        Intent i = getIntent();
+        Person userCurrent = (Person) i.getSerializableExtra("user");
+            firstName = userCurrent.getFirstName();
+            lastName = userCurrent.getLastName();
+            password = userCurrent.getPassword();
         init();
     }
 
@@ -61,7 +62,7 @@ public class Home extends AppCompatActivity {
                         launchFragment(serviceFragment);
                         break;
                     case R.id.item_settings:
-                        Fragment settingsFragment = SettingsFragment.newInstance();
+                        Fragment settingsFragment = SettingsFragment.newInstance(firstName, lastName, password);
                         launchFragment(settingsFragment);
                         break;
                 }
